@@ -8,7 +8,6 @@
         <parameter key="noxlogic_rate_limit.header_modification_listener.class">Noxlogic\RateLimitBundle\EventListener\HeaderModificationListener</parameter>
         <parameter key="noxlogic_rate_limit.rate_limit_annotation_listener.class">Noxlogic\RateLimitBundle\EventListener\RateLimitAnnotationListener</parameter>
         <parameter key="noxlogic_rate_limit.rate_limit_service.class">Noxlogic\RateLimitBundle\Service\RateLimitService</parameter>
-        <parameter key="noxlogic_rate_limit.oauth_key_generate_listener.class">Noxlogic\RateLimitBundle\EventListener\OauthKeyGenerateListener</parameter>
         <parameter key="noxlogic_rate_limit.path_limit_processor.class">Noxlogic\RateLimitBundle\Util\PathLimitProcessor</parameter>
     </parameters>
 
@@ -75,13 +74,6 @@
                 <argument>header_reset_name</argument>
                 <argument>%noxlogic_rate_limit.headers.reset.name%</argument>
             </call>
-        </service>
-
-
-        <service id="noxlogic_rate_limit.oauth_key_generate_listener" class="%noxlogic_rate_limit.oauth_key_generate_listener.class%">
-            <argument /> <!-- security.token_storage or security.context for Symfony <2.6 -->
-
-            <tag name="kernel.event_listener" event="ratelimit.generate.key" method="onGenerateKey" />
         </service>
 
     </services>

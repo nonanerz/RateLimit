@@ -2,8 +2,6 @@
 
 namespace Noxlogic\RateLimitBundle\Tests\Service;
 
-use Noxlogic\RateLimitBundle\EventListener\OauthKeyGenerateListener;
-use Noxlogic\RateLimitBundle\Events\GenerateKeyEvent;
 use Noxlogic\RateLimitBundle\Service\RateLimitInfo;
 use Noxlogic\RateLimitBundle\Tests\TestCase;
 use Symfony\Component\HttpFoundation\Request;

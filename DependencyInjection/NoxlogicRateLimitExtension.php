@@ -110,12 +110,5 @@ class NoxlogicRateLimitExtension extends Extension
                 );
                 break;
         }
-
-        if ($config['fos_oauth_key_listener']) {
-            $tokenStorageReference = new Reference('security.token_storage');
-            $container->getDefinition('noxlogic_rate_limit.oauth_key_generate_listener')->replaceArgument(0, $tokenStorageReference);
-        } else {
-            $container->removeDefinition('noxlogic_rate_limit.oauth_key_generate_listener');
-        }
     }
 }
