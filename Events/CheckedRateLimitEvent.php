@@ -2,7 +2,7 @@
 
 namespace Noxlogic\RateLimitBundle\Events;
 
-use Noxlogic\RateLimitBundle\Annotation\RateLimit;
+use Noxlogic\RateLimitBundle\Attribute\RateLimit;
 use Symfony\Component\HttpFoundation\Request;
 
 class CheckedRateLimitEvent extends AbstractEvent

@@ -4,12 +4,11 @@ namespace Noxlogic\RateLimitBundle\Tests\Service;
 
 use Noxlogic\RateLimitBundle\Service\RateLimitInfo;
 use Noxlogic\RateLimitBundle\Tests\TestCase;
-use Symfony\Component\HttpFoundation\Request;
 
 class RateLimitInfoTest extends TestCase
 {
 
-    public function testRateInfoSetters()
+    public function testRateInfoSetters(): void
     {
         $rateInfo = new RateLimitInfo();
 

@@ -145,9 +145,9 @@ class HeaderModificationListenerTest extends TestCase
         $response = new Response();
 
         if (class_exists('Symfony\\Component\\HttpKernel\\Event\\ControllerEvent')) {
-            $event = new ResponseEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST, $response);
+            $event = new ResponseEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST, $response);
         } else {
-            $event = new FilterResponseEvent($kernel, $request, HttpKernelInterface::MASTER_REQUEST, $response);
+            $event = new FilterResponseEvent($kernel, $request, HttpKernelInterface::MAIN_REQUEST, $response);
         }
 
         return $event;

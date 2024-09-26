@@ -10,7 +10,7 @@ class RedisTest extends TestCase
     public function testgetRateInfo()
     {
         $client = $this->getMockBuilder('Predis\\Client')
-            ->addMethods(array('hgetall'))
+            ->setMethods(array('hgetall'))
             ->getMock();
         $client->expects($this->once())
               ->method('hgetall')
@@ -28,7 +28,7 @@ class RedisTest extends TestCase
     public function testcreateRate()
     {
         $client = $this->getMockBuilder('Predis\\Client')
-            ->addMethods(array('hset', 'expire', 'hgetall'))
+            ->setMethods(array('hset', 'expire', 'hgetall'))
             ->getMock();
         $client->expects($this->once())
               ->method('expire')
@@ -49,7 +49,7 @@ class RedisTest extends TestCase
     public function testLimitRateNoKey()
     {
         $client = $this->getMockBuilder('Predis\\Client')
-            ->addMethods(array('hgetall'))
+            ->setMethods(array('hgetall'))
             ->getMock();
         $client->expects($this->once())
               ->method('hgetall')
@@ -63,7 +63,7 @@ class RedisTest extends TestCase
     public function testLimitRateWithKey()
     {
         $client = $this->getMockBuilder('Predis\\Client')
-            ->addMethods(array('hexists', 'hincrby', 'hgetall'))
+            ->setMethods(array('hexists', 'hincrby', 'hgetall'))
             ->getMock();
         $client->expects($this->once())
             ->method('hgetall')
@@ -87,7 +87,7 @@ class RedisTest extends TestCase
     public function testresetRate()
     {
         $client = $this->getMockBuilder('Predis\\Client')
-            ->addMethods(array('del'))
+            ->setMethods(array('del'))
             ->getMock();
         $client->expects($this->once())
               ->method('del')
@@ -100,7 +100,7 @@ class RedisTest extends TestCase
     public function testSanitizeKey()
     {
         $client = $this->getMockBuilder('Predis\\Client')
-            ->addMethods(array('del'))
+            ->setMethods(array('del'))
             ->getMock();
         $client->expects($this->once())
               ->method('del')

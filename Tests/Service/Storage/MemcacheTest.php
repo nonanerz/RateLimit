@@ -17,7 +17,7 @@ class MemcacheTest extends TestCase
     public function testGetRateInfo()
     {
         $client = @$this->getMockBuilder('\\Memcached')
-            ->onlyMethods(array('get'))
+            ->setMethods(array('get'))
             ->getMock();
         $client->expects($this->once())
               ->method('get')
@@ -35,7 +35,7 @@ class MemcacheTest extends TestCase
     public function testCreateRate()
     {
         $client = @$this->getMockBuilder('\\Memcached')
-            ->onlyMethods(array('set', 'get'))
+            ->setMethods(array('set', 'get'))
             ->getMock();
         $client->expects($this->exactly(1))
               ->method('set');
@@ -48,7 +48,7 @@ class MemcacheTest extends TestCase
     public function testLimitRateNoKey()
     {
         $client = @$this->getMockBuilder('\\Memcached')
-            ->onlyMethods(array('get','getResultCode'))
+            ->setMethods(array('get','getResultCode'))
             ->getMock();
         $client->expects($this->any())
                 ->method('getResultCode')
@@ -65,7 +65,7 @@ class MemcacheTest extends TestCase
     public function testLimitRateWithKey()
     {
         $client = @$this->getMockBuilder('\\Memcached')
-            ->onlyMethods(array('get','cas','getResultCode'))
+            ->setMethods(array('get','cas','getResultCode'))
             ->getMock();
         $client->expects($this->any())
                 ->method('getResultCode')
@@ -82,7 +82,7 @@ class MemcacheTest extends TestCase
     public function testResetRate()
     {
         $client = @$this->getMockBuilder('\\Memcached')
-            ->onlyMethods(array('delete'))
+            ->setMethods(array('delete'))
             ->getMock();
         $client->expects($this->once())
               ->method('delete')
